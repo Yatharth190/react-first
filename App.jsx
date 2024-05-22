@@ -1,60 +1,35 @@
-import { useState } from 'react';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-function CounterApp() {
-  const [count, setCount] = useState(10); // Assuming the initial count is 10 as per the image
-
-  const styles = {
-    body: {
-      display: 'flex',
-      alignItem:'center',
-      justifyContent:'center',
-    },
-    container: {
-      textAlign: 'center',
-      fontFamily: 'Arial',
-      marginTop: '50px',
-      margin:'25%',
-    },
-    title: {
-      fontSize: '124px',
-      color: '#fff'
-    },
-    countDisplay: {
-      fontSize: '58px',
-      margin: '20px 0'
-    },
-    button: {
-      width: '50px',
-      height: '50px',
-      borderRadius: '50%',
-      
-      border: 'none',
-      fontSize: '15px',
-      margin: '0 10px',
-      cursor: 'pointer',
-      alignSelf: 'center',
-      justifySelf:'center'
-      },
-    increaseButton: {
-      backgroundColor: 'green'
-    },
-    decreaseButton: {
-      backgroundColor: 'red'
-    },
-    resetButton: {
-      backgroundColor: 'aqua'
-    }
-  };
+function App() {
+  const [count, setCount] = useState(0)
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Counter App</h1>
-      <div style={styles.countDisplay}>{count}</div>
-      <button style={{ ...styles.button, ...styles.increaseButton }} onClick={() => setCount(count + 1)}>+</button>
-      <button style={{ ...styles.button, ...styles.decreaseButton }} onClick={() => setCount(count - 1)}>-</button>
-      <button style={{ ...styles.button, ...styles.resetButton }} onClick={() => setCount(0)}>0</button>
-    </div>
-  );
+    <>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
 
-export default CounterApp;
+export default App
